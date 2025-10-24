@@ -13,18 +13,13 @@ outputs = ["Reveal"]
 <span class="hint">(last built on: {{< today >}})</span>
 
 {{< gc >}} and {{< mm >}}
-<br>Dipartimento di Informatica — Scienza e Ingegneria (DISI), Sede di Cesena,
-<br> Alma Mater Studiorum—Università di Bologna
+<br> Department of Computer Science and Engineering (DISI)
+<br> Alma Mater Studiorum—University of Bologna
 
 <br>[Mini-school](https://sites.google.com/view/woa2025/mini-school) @ [WOA 2025, the 26th Workshop From Objects to Agents](https://sites.google.com/view/woa2025)
-<br>2nd July 2025, Trento, Italy
+<br>4th November 2025, Esch-sur-Alzette, Luxembourg
 
 <br>
-<span class="hint">
-This talk is partially supported by the “ENGINES — ENGineering INtElligent Systems around intelligent agent technologies”
-project funded by the Italian MUR program “PRIN 2022” under grant number 20229ZXBZM.
-</span>
-<br>{{< image src="./images/engines_logo.jpg" alt="ENGINES project logo" width="70px" >}}
 
 ---
 
