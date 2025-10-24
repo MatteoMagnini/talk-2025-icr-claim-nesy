@@ -30,10 +30,10 @@
 <section data-shortcode-section="">
 <h1 id="symbolic-knowledge-extraction-and-injectiontheory-and-methods">Symbolic Knowledge Extraction and Injection:<br>Theory and Methods</h1>
 <p><span class="hint">(last built on: 2025-10-24)</span></p>
-<p><a href="mailto:giovanni.ciatto@unibo.it">Giovanni Ciatto</a> and <a href="mailto:matteo.magnini@unibo.it">Matteo Magnini</a>
+<p><a href="mailto:matteo.magnini@unibo.it">Matteo Magnini</a>
 <br> Department of Computer Science and Engineering (DISI)
 <br> Alma Mater Studiorum—University of Bologna</p>
-<p><br>ICR-CLAiM Seminar @ <a href="https://www.uni.lu/fstm-en/">FSTM, University of Luxembourg</a>
+<p><br>ICR-CLAiM Seminar @ <a href="https://www.uni.lu/fstm-en/research-departments/department-of-computer-science/">DCS, FSTM, University of Luxembourg</a>
 <br>4th November 2025, Esch-sur-Alzette, Luxembourg</p>
 <br>
 </section><section>
@@ -66,20 +66,84 @@
 </section>
 </section>
 
+
+<section data-shortcode-section="">
+<section data-noprocess="" data-shortcode-slide="" id="about me">
+<h1 id="about-me">About me</h1>
+<div class="container-fluid w-100 m-0 p-0 justify-content-center">
+    <div class="row justify-content-center "><div class="col "><img src="./images/matteo.jpeg" alt="Matteo Magnini" style="width: 100%; max-width: 95vw; max-height: 50vh; object-fit: contain; ">
+</div>
+<div class="col "><h2 id="research-topics">Research topics</h2>
+<ul>
+<li><span style="font-size: smaller;">Symbolic and Neuro-Symbolic AI (NeSy)</span>
+<ul>
+<li>Symbolic Knowledge Injection (SKI)</li>
+<li>Symbolic Knowledge Extraction (SKE)</li>
+</ul>
+</li>
+<li><span style="font-size: smaller;">Explainable AI (XAI)</span></li>
+<li><span style="font-size: smaller;">Fairness in AI</span>
+<ul>
+<li>Regularization for Group Fairness</li>
+</ul>
+</li>
+<li><span style="font-size: smaller;">Large Language Models (LLMs)</span>
+<ul>
+<li>RAG pipelines</li>
+<li>Medical applications</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="col "><h2 id="interests">Interests</h2>
+<ul>
+<li><span style="font-size: smaller;">Scuba Diver</span>
+<ul>
+<li>NADD ADV</li>
+<li>~40 dives</li>
+</ul>
+</li>
+<li><span style="font-size: smaller;">Chess</span>
+<ul>
+<li>ELO ~1750 (estimated)</li>
+</ul>
+</li>
+<li><span style="font-size: smaller;">History</span></li>
+<li><span style="font-size: smaller;">Hiking</span></li>
+<li><span style="font-size: smaller;">Cooking</span>
+<ul>
+<li>(or should I say eating)</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</section><section>
+<div class="container-fluid w-100 m-0 p-0 justify-content-center">
+    <div class="row justify-content-center "><h1 id="recent-achievements">Recent achievements</h1>
+<div class="col "></div>
+<div class="col "><img src="./images/wedding.jpg" alt="Wedding" style="width: 100%; max-width: 95vw; max-height: 50vh; object-fit: contain; ">
+</div>
+<div class="col "><img src="./images/frontispiece.png" alt="Wedding" style="width: 100%; max-width: 95vw; max-height: 50vh; object-fit: contain; ">
+</div>
+<div class="col "></div>
+</div>
+</div>
+
+</section>
+</section>
+
 <section data-noprocess="" data-shortcode-slide="" id="background">
   
 <h1 id="background">Background</h1>
 <p>Quick overview on symbolic vs. sub-symbolic AI</p>
 </section><section>
+
+
+<section data-shortcode-section="">
 <h2 id="overview-on-ai">Overview on AI</h2>
-
-
-
-
-
-
 <img src="./images/ai-map.svg" alt="AI map" style="width: 100%; max-width: 95vw; max-height: 80vh; object-fit: contain; ">
-
 <ul>
 <li>wide field of research, with many <em>sub-fields</em></li>
 <li>each sub-field has its own relevant <em>tasks</em> (problems) …</li>
@@ -88,22 +152,17 @@
 </section><section>
 <h2 id="symbolic-vs-sub-symbolic-ai">Symbolic vs. Sub-symbolic AI</h2>
 <p>Two broad categories of AI approaches:</p>
-
-
-
-
-
-
 <img src="./images/ai-map2.svg" alt="AI map with a focus on symbolic vs sub-symbolic" style="width: 100%; max-width: 95vw; max-height: 80vh; object-fit: contain; ">
 
+</section>
 </section><section>
 
 
 <section data-shortcode-section="">
 <h2 id="why-the-wording-symbolic-vs-sub-symbolic-pt-1">Why the wording “Symbolic” vs. “Sub-symbolic”? (pt. 1)</h2>
 <h3 id="local-vs-distributed-representations">Local vs. Distributed Representations</h3>
-<div class="container w-100 m-0 p-0">
-    <div class="row "><div class="col "><img src="./images/local-distributed-representations.png" alt="Local vs. Distributed Representations of a bunch of animals" style="width: 100%; max-width: 95vw; max-height: 60vh; object-fit: contain; ">
+<div class="container-fluid w-100 m-0 p-0 justify-content-center">
+    <div class="row justify-content-center "><div class="col "><img src="./images/local-distributed-representations.png" alt="Local vs. Distributed Representations of a bunch of animals" style="width: 100%; max-width: 95vw; max-height: 60vh; object-fit: contain; ">
 </div>
 <div class="col "><br>
 <ul>
@@ -184,8 +243,8 @@
 </section><section>
 <h2 id="examples-of-symbolic-ai-pt-5">Examples of Symbolic AI (pt. 5)</h2>
 <h3 id="planning-in-strips">Planning in STRIPS</h3>
-<div class="container w-100 m-0 p-0">
-    <div class="row "><div class="col "><img src="./images/planning.png" alt="Example of start vs goal state + state branching" style="width: 100%; max-width: 95vw; max-height: 60vh; object-fit: contain; ">
+<div class="container-fluid w-100 m-0 p-0 justify-content-center">
+    <div class="row justify-content-center "><div class="col "><img src="./images/planning.png" alt="Example of start vs goal state + state branching" style="width: 100%; max-width: 95vw; max-height: 60vh; object-fit: contain; ">
 </div>
 <div class="col "><br>
 <h4 id="available-actions">Available actions</h4>
@@ -305,8 +364,8 @@
 
 
 <span class="fragment ">
-  <div class="container w-100 m-0 p-0">
-    <div class="row "><div class="col "><h4 id="sub-symbolic-ai">Sub-symbolic AI</h4>
+  <div class="container-fluid w-100 m-0 p-0 justify-content-center">
+    <div class="row justify-content-center "><div class="col "><h4 id="sub-symbolic-ai">Sub-symbolic AI</h4>
 <ul>
 <li>Provides mechanisms emulating human-like <em>intuition</em></li>
 <li><em>Quick</em>, possibly <em>error-prone</em>, but often <em>effective</em></li>
@@ -385,8 +444,8 @@
 <ol>
 <li>Let’s say you have a <strong>dataset</strong> of vectors in $\mathbb{R}^n$</li>
 </ol>
-<div class="container w-100 m-0 p-0">
-    <div class="row "><div class="col "><ol start="2">
+<div class="container-fluid w-100 m-0 p-0 justify-content-center">
+    <div class="row justify-content-center "><div class="col "><ol start="2">
 <li>Let’s say the vectors are <em>labelled differently</em> (2 colors)</li>
 </ol>
 <img src="./images/classification-1.png" alt="Example of vectors to be separated" style="width: 100%; max-width: 95vw; max-height: 60vh; object-fit: contain; ">
@@ -409,8 +468,8 @@
 <ol start="4">
 <li>Then, need to <em>approximate</em> the function <em>$f$</em>…</li>
 </ol>
-<div class="container w-100 m-0 p-0">
-    <div class="row "><div class="col "><ol start="4">
+<div class="container-fluid w-100 m-0 p-0 justify-content-center">
+    <div class="row justify-content-center "><div class="col "><ol start="4">
 <li>… <strong>separating them</strong> (the sigmoid here)</li>
 </ol>
 <img src="./images/classification-2.png" alt="Example of vectors to be separated, and the corresponding decision boundary" style="width: 100%; max-width: 95vw; max-height: 60vh; object-fit: contain; ">
@@ -500,8 +559,8 @@ $$ f^* = \arg\min_{f \in \mathcal{H}} \mathcal{L}(f(X), Y) $$</li>
 </section><section>
 <h2 id="supervised-machine-learning-101-pt-6">Supervised Machine Learning 101 (pt. 6)</h2>
 <h3 id="lets-solve-the-problem-with-neural-networks">Let’s solve the problem with <strong>neural networks</strong></h3>
-<div class="container w-100 m-0 p-0">
-    <div class="row "><div class="col "><img src="./images/neuron.png" alt="Functioning of a single neuron" style="width: 100%; max-width: 95vw; max-height: 60vh; object-fit: contain; ">
+<div class="container-fluid w-100 m-0 p-0 justify-content-center">
+    <div class="row justify-content-center "><div class="col "><img src="./images/neuron.png" alt="Functioning of a single neuron" style="width: 100%; max-width: 95vw; max-height: 60vh; object-fit: contain; ">
 <p>Single neuron</p>
 </div>
 <div class="col "><img src="./images/neural-network.png" alt="Functioning of a feed-forward neural network" style="width: 100%; max-width: 95vw; max-height: 60vh; object-fit: contain; ">
@@ -565,8 +624,8 @@ Neural network $\equiv$ cascade of <em>layers</em></p>
 </section><section>
 <h2 id="supervised-machine-learning-101-pt-10">Supervised Machine Learning 101 (pt. 10)</h2>
 <h3 id="how-things-may-go-wrong--training-is-stochastic">How things may go wrong – Training is <strong>stochastic</strong></h3>
-<div class="container w-100 m-0 p-0">
-    <div class="row "><div class="col "><p>Depending on its start, training may yield <em>different results</em>:</p>
+<div class="container-fluid w-100 m-0 p-0 justify-content-center">
+    <div class="row justify-content-center "><div class="col "><p>Depending on its start, training may yield <em>different results</em>:</p>
 <img src="./images/gradient-descent.jpg" alt="Gradient descent algorithm (visualization of local minima)" style="width: 100%; max-width: 95vw; max-height: 40vh; object-fit: contain; ">
 </div>
 <div class="col "><p>Solution is <strong>coss-validation</strong>:</p>
@@ -588,8 +647,8 @@ Neural network $\equiv$ cascade of <em>layers</em></p>
 <h3 id="how-things-may-go-wrong--data-may-not-be-numeric">How things may go wrong – Data may not be numeric</h3>
 <br>
 <h4 id="solution-change-encoding">Solution: <strong>change encoding</strong></h4>
-<div class="container w-100 m-0 p-0">
-    <div class="row "><div class="col "><img src="./images/ordinal-encoding.png" alt="Example of ordinal encoding" style="width: 80%; max-width: 95vw; max-height: 60vh; object-fit: contain; ">
+<div class="container-fluid w-100 m-0 p-0 justify-content-center">
+    <div class="row justify-content-center "><div class="col "><img src="./images/ordinal-encoding.png" alt="Example of ordinal encoding" style="width: 80%; max-width: 95vw; max-height: 60vh; object-fit: contain; ">
 <p>(<em>Ordinal</em> encoding)</p>
 </div>
 <div class="col "><img src="./images/one-hot-encoding.png" alt="Example of one-hot encoding" style="width: 100%; max-width: 95vw; max-height: 60vh; object-fit: contain; ">
@@ -602,8 +661,8 @@ Neural network $\equiv$ cascade of <em>layers</em></p>
 <h3 id="how-things-may-go-wrong--data-may-not-be-separable-by-a-proper-function">How things may go wrong – Data may <em>not</em> be <strong>separable</strong> by a proper function…</h3>
 <br>
 <h4 id="solution-feature-engineering-map-data-into-a-different-space">Solution: <strong>feature engineering</strong> (map data into a different space)</h4>
-<div class="container w-100 m-0 p-0">
-    <div class="row "><div class="col "><img src="./images/non-separable.png" alt="Non-linearly-separable data" style="width: 100%; max-width: 95vw; max-height: 50vh; object-fit: contain; ">
+<div class="container-fluid w-100 m-0 p-0 justify-content-center">
+    <div class="row justify-content-center "><div class="col "><img src="./images/non-separable.png" alt="Non-linearly-separable data" style="width: 100%; max-width: 95vw; max-height: 50vh; object-fit: contain; ">
 <p>Non-linearly-separable data …
 <br>
 $(x, y)$</p>
@@ -650,8 +709,8 @@ $(\rho = \sqrt{x^2 + y^2}$, $\theta = \arctan(y/x))$</p>
 </section><section>
 <h2 id="explainability-vs-interpretability">Explainability vs Interpretability</h2>
 <p>They are <em>not</em> synonyms in spite of the fact that they are often used interchangeably!</p>
-<div class="container w-100 m-0 p-0">
-    <div class="row "><div class="col "><h3 style="text-align: center; color: blue">
+<div class="container-fluid w-100 m-0 p-0 justify-content-center">
+    <div class="row justify-content-center "><div class="col "><h3 style="text-align: center; color: blue">
 Explanation
 </h3>
 <ul>
@@ -688,8 +747,8 @@ Interpretation
 <p>Main entities and how to extract symbolic knowledge from sub-symbolic predictors</p>
 </section><section>
 <h2 id="entities">Entities</h2>
-<div class="container w-100 m-0 p-0">
-    <div class="row "><div class="col "><h3 style="text-align: center; color: blue">
+<div class="container-fluid w-100 m-0 p-0 justify-content-center">
+    <div class="row justify-content-center "><div class="col "><h3 style="text-align: center; color: blue">
 Sub-symbolic predictor
 </h3>
 <img src="./images/nn-iris.png" alt="Example of a neural network trained on the Iris dataset" style="width: 100%; max-width: 95vw; max-height: 60vh; object-fit: contain; ">
@@ -731,8 +790,8 @@ Symbolic knowledge
 </div>
 </section><section>
 <h2 id="how-ske-works">How SKE works</h2>
-<div class="container w-100 m-0 p-0">
-    <div class="row "><div class="col "><h3 style="text-align: center; color: blue">
+<div class="container-fluid w-100 m-0 p-0 justify-content-center">
+    <div class="row justify-content-center "><div class="col "><h3 style="text-align: center; color: blue">
 Decompositional SKE
 </h3>
 <blockquote>
@@ -929,8 +988,8 @@ The target feature is whether the individual earns more than $50,000 per year.</
 <img src="./images/ske-taxonomy.svg" alt="Taxonomy of SKE methods" style="width: 80%; max-width: 95vw; max-height: 80vh; object-fit: contain; ">
 </section><section>
 <h2 id="taxonomy-of-ske-methods-pt-2">Taxonomy of SKE methods (pt. 2)</h2>
-<div class="container w-100 m-0 p-0">
-    <div class="row "><div class="col "></div>
+<div class="container-fluid w-100 m-0 p-0 justify-content-center">
+    <div class="row justify-content-center "><div class="col "></div>
 <div class="col "><h3 style="color: blue">
 Target AI task
 </h3>
@@ -962,8 +1021,8 @@ Input data
 </div>
 </section><section>
 <h2 id="taxonomy-of-ske-methods-pt-3">Taxonomy of SKE methods (pt. 3)</h2>
-<div class="container w-100 m-0 p-0">
-    <div class="row "><div class="col "><h3 style="text-align: center; color: blue">
+<div class="container-fluid w-100 m-0 p-0 justify-content-center">
+    <div class="row justify-content-center "><div class="col "><h3 style="text-align: center; color: blue">
 Shape
 </h3>
 <ul>
@@ -1005,8 +1064,8 @@ Expressiveness
 
 <section data-shortcode-section="">
 <h2 id="discussion">Discussion</h2>
-<div class="container w-100 m-0 p-0">
-    <div class="row "><div class="col "><h3 id="notable-remarks"><strong>Notable remarks</strong></h3>
+<div class="container-fluid w-100 m-0 p-0 justify-content-center">
+    <div class="row justify-content-center "><div class="col "><h3 id="notable-remarks"><strong>Notable remarks</strong></h3>
 <ul>
 <li>
 <p>discretisation of the input space</p>
@@ -1320,8 +1379,8 @@ $$
 <p>The poker hand data set (PHDS) (cf. <a href="https://doi.org/10.24432/C5KW38">Cattral Robert and Oppacher Franz, 2002</a>)</p>
 </section><section>
 <h2 id="phds-classification-task">PHDS classification task</h2>
-<div class="container w-100 m-0 p-0">
-    <div class="row "><div class="col "><div style="margin-top: 25vh; margin-left: 5vw;">
+<div class="container-fluid w-100 m-0 p-0 justify-content-center">
+    <div class="row justify-content-center "><div class="col "><div style="margin-top: 25vh; margin-left: 5vw;">
 <ul>
 <li>
 <p>Each record represents one poker hand</p>
@@ -1698,8 +1757,8 @@ $$
 
 <section data-shortcode-section="">
 <h2 id="discussion">Discussion</h2>
-<div class="container w-100 m-0 p-0">
-    <div class="row "><div class="col "><h3 style="text-align: center; color: blue">
+<div class="container-fluid w-100 m-0 p-0 justify-content-center">
+    <div class="row justify-content-center "><div class="col "><h3 style="text-align: center; color: blue">
 Notable remarks
 </h3>
 <ul>
@@ -1753,17 +1812,19 @@ Limitations
 <h2 id="lets-keep-in-touch">Let’s keep in touch!</h2>
 <p>The talk is over, I hope you enjoyed it</p>
 
-<div class="container w-100 m-0 p-0">
-    <div class="row "><div class="col "></div>
+<div class="container-fluid w-100 m-0 p-0 justify-content-center">
+    <div class="row justify-content-center "><div class="col "></div>
 <div class="col "><img src="./images/matteo.png" alt="Matteo Magnini" style="width: 100%; max-width: 95vw; max-height: 50vh; object-fit: contain; ">
 </div>
-<div class="col "><p>📫 <a href="mailto:matteo.magnini@unibo.it">Unibo email</a>
+<div class="col "><p>📫🎓 <a href="mailto:matteo.magnini@unibo.it">matteo.magnini@unibo.it</a></p>
+<br>
+<p>📫✉️‍ <a href="mailto:matteo.magnini00@gmail.com">matteo.magnini00@gmail.com</a></p>
+<br>
+<p>💻 <a href="https://github.com/MatteoMagnini">github.com/MatteoMagnini</a>
 <br></p>
-<p>💻 <a href="https://github.com/MatteoMagnini">GitHub</a>
+<p>✒️ <a href="https://www.linkedin.com/in/matteo-magnini/">www.linkedin.com/in/matteo-magnini/</a>
 <br></p>
-<p>✒️ <a href="https://www.linkedin.com/in/matteo-magnini/">Linkedin</a>
-<br></p>
-<p>🏢  <a href="https://pslab-unibo.github.io/">Research group</a></p>
+<p>🏢 <a href="https://pslab-unibo.github.io/">pslab-unibo.github.io</a></p>
 </div>
 </div>
 </div>
