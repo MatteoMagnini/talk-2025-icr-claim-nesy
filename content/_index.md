@@ -12,11 +12,11 @@ outputs = ["Reveal"]
 
 <span class="hint">(last built on: {{< today >}})</span>
 
-{{< gc >}} and {{< mm >}}
+{{< mm >}}
 <br> Department of Computer Science and Engineering (DISI)
 <br> Alma Mater Studiorum—University of Bologna
 
-<br>ICR-CLAiM Seminar @ [FSTM, University of Luxembourg](https://www.uni.lu/fstm-en/)
+<br>ICR-CLAiM Seminar @ [DCS, FSTM, University of Luxembourg](https://www.uni.lu/fstm-en/research-departments/department-of-computer-science/)
 <br>4th November 2025, Esch-sur-Alzette, Luxembourg
 
 <br>
@@ -35,6 +35,86 @@ outputs = ["Reveal"]
 
 ---
 
+{{% section %}}
+
+{{< slide id="about me" >}}
+
+# About me
+
+{{% multicol %}}
+
+{{% col %}}
+
+{{< image src="./images/matteo.jpeg" alt="Matteo Magnini" width="100%" max-h="50vh" >}}
+
+{{% /col %}}
+
+{{% col %}}
+
+## Research topics
+
+- <span style="font-size: smaller;">Symbolic and Neuro-Symbolic AI (NeSy)</span>
+  - Symbolic Knowledge Injection (SKI)
+  - Symbolic Knowledge Extraction (SKE)
+- <span style="font-size: smaller;">Explainable AI (XAI)</span>
+- <span style="font-size: smaller;">Fairness in AI</span>
+  - Regularization for Group Fairness
+- <span style="font-size: smaller;">Large Language Models (LLMs)</span>
+  - RAG pipelines
+  - Medical applications
+
+{{% /col %}}
+
+{{% col %}}
+
+## Interests
+
+- <span style="font-size: smaller;">Scuba Diver</span>
+  - NADD ADV
+  - ~40 dives
+- <span style="font-size: smaller;">Chess</span>
+  - ELO ~1750 (estimated)
+- <span style="font-size: smaller;">History</span>
+- <span style="font-size: smaller;">Hiking</span>
+- <span style="font-size: smaller;">Cooking</span>
+  - (or should I say eating)
+
+{{% /col %}}
+
+{{% /multicol %}}
+
+---
+
+{{% multicol %}}
+
+# Recent achievements
+
+{{% col %}}
+
+{{% /col %}}
+
+{{% col %}}
+
+{{< image src="./images/wedding.jpg" alt="Wedding" width="100%" max-h="50vh" >}}
+
+{{% /col %}}
+
+{{% col %}}
+
+{{< image src="./images/frontispiece.png" alt="Wedding" width="100%" max-h="50vh" >}}
+
+{{% /col %}}
+
+{{% col %}}
+
+{{% /col %}}
+
+{{% /multicol %}}
+
+{{% /section %}}
+
+---
+
 {{< slide id="background" >}}
 
 # Background
@@ -42,6 +122,8 @@ outputs = ["Reveal"]
 Quick overview on symbolic vs. sub-symbolic AI
 
 ---
+
+{{% section %}}
 
 ## Overview on AI
 
@@ -59,6 +141,7 @@ Two broad categories of AI approaches:
 
 {{< image src="./images/ai-map2.svg" alt="AI map with a focus on symbolic vs sub-symbolic" width="100%" >}}
 
+{{% /section %}}
 
 ---
 
@@ -1358,16 +1441,21 @@ The talk is over, I hope you enjoyed it
 
 {{% col %}}
 
-📫 [Unibo email](mailto:matteo.magnini@unibo.it)
+📫🎓 [matteo.magnini@unibo.it](mailto:matteo.magnini@unibo.it)
+
 <br>
 
-💻 [GitHub](https://github.com/MatteoMagnini)
+📫✉️‍ [matteo.magnini00@gmail.com](mailto:matteo.magnini00@gmail.com)
+
 <br>
 
-✒️ [Linkedin](https://www.linkedin.com/in/matteo-magnini/)
+💻 [github.com/MatteoMagnini](https://github.com/MatteoMagnini)
 <br>
 
-🏢  [Research group](https://pslab-unibo.github.io/)
+✒️ [www.linkedin.com/in/matteo-magnini/](https://www.linkedin.com/in/matteo-magnini/)
+<br>
+
+🏢 [pslab-unibo.github.io](https://pslab-unibo.github.io/)
 
 {{% /col %}}
 
