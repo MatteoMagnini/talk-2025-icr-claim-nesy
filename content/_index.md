@@ -16,7 +16,7 @@ outputs = ["Reveal"]
 <br> Department of Computer Science and Engineering (DISI)
 <br> Alma Mater Studiorum—University of Bologna
 
-<br>[Mini-school](https://sites.google.com/view/woa2025/mini-school) @ [WOA 2025, the 26th Workshop From Objects to Agents](https://sites.google.com/view/woa2025)
+<br>ICR-CLAiM Seminar @ [FSTM, University of Luxembourg](https://www.uni.lu/fstm-en/)
 <br>4th November 2025, Esch-sur-Alzette, Luxembourg
 
 <br>
