@@ -913,14 +913,6 @@ The target feature is whether the individual earns more than $50,000 per year.
 
 4. Visualise the extracted symbolic knowledge as a *decision tree* and as a set of *rules*
 
----
-
-## Jump to the code
-
-GitHub repository at [github.com/MatteoMagnini/demo-2025-woa-nesy/blob/master/notebook/extraction.ipynb](https://github.com/MatteoMagnini/demo-2025-woa-nesy/blob/master/notebook/extraction.ipynb)
-
-{{< image src="./images/ske-notebook-qr.svg" alt="QR code to the Jupyter notebook" width="20%" >}}
-
 {{% /section %}}
 
 ---
@@ -1192,16 +1184,16 @@ SKI methods: theory and practice
 
 ## Fuzzification
 
-| **Formula**            | **C. interpretation**                                |   | **Formula**                                         | **C. interpretation**                |
-|------------------------|------------------------------------------------------|---|-----------------------------------------------------|--------------------------------------|
-| \[\[\neg \phi]]        | $\eta(1 - [[\phi]])$                                 |   | \[\[\phi \le \psi]]                                 | $\eta([[\phi]] - [[\psi]])$          |
-| \[\[\phi \wedge \psi]] | $\eta(\max([[\phi]], [[\psi]]))$                     |   | $[\mathrm{class}(\bar{X}, {y}_i) \leftarrow \psi]]$ | $[[\psi]]^{*}$                       |
-| \[\[\phi \vee \psi]]   | $\eta(\min([[\phi]], [[\psi]]))$                     |   | $[\text{expr}(\bar{X})]]$                           | $\text{expr}([[\bar{X}]])$           |
-| \[\[\phi = \psi]]      | $\eta(\left\lvert [[\phi]] - [[\psi]] \right\rvert)$ |   | $[[\mathtt{true}]]$                                 | $0$                                  |
-| \[\[\phi \ne \psi]]    | $[[\neg(\phi = \psi)]]$                              |   | $[[\mathtt{false}]]$                                | $1$                                  |
-| \[\[\phi > \psi]]      | $\eta(\frac{1}{2} - [[\phi]] + [[\psi]])$            |   | $[[X]]$                                             | $x$                                  |
-| \[\[\phi \ge \psi]]    | $\eta([[\psi]] - [[\phi]])$                          |   | $[[{k}]]$                                           | $k$                                  |
-| \[\[\phi < \psi]]      | $\eta(\frac{1}{2} + [[\phi]] - [[\psi]])$            |   | $[\mathrm{p}(\bar{X})]]^{**}$                       | $[[\psi_1 \vee \ldots \vee \psi_k]]$ |
+| **Formula**              | **C. interpretation**                                |   | **Formula**                                         | **C. interpretation**                |
+|--------------------------|------------------------------------------------------|---|-----------------------------------------------------|--------------------------------------|
+| $[[\neg \phi]]$          | $\eta(1 - [[\phi]])$                                 |   | $[[\phi \le \psi]]$                                 | $\eta([[\phi]] - [[\psi]])$          |
+| $[[\phi \wedge \psi]]$   | $\eta(\max([[\phi]], [[\psi]]))$                     |   | $[\mathrm{class}(\bar{X}, {y}_i) \leftarrow \psi]]$ | $[[\psi]]^{*}$                       |
+| $[[\phi \vee \psi]]$     | $\eta(\min([[\phi]], [[\psi]]))$                     |   | $[\text{expr}(\bar{X})]]$                           | $\text{expr}([[\bar{X}]])$           |
+| $[[\phi = \psi]]$        | $\eta(\left\lvert [[\phi]] - [[\psi]] \right\rvert)$ |   | $[[\mathtt{true}]]$                                 | $0$                                  |
+| $[[\phi \ne \psi]]$      | $[[\neg(\phi = \psi)]]$                              |   | $[[\mathtt{false}]]$                                | $1$                                  |
+| $[[\phi > \psi]]$        | $\eta(\frac{1}{2} - [[\phi]] + [[\psi]])$            |   | $[[X]]$                                             | $x$                                  |
+| $[[\phi \ge \psi]]$      | $\eta([[\psi]] - [[\phi]])$                          |   | $[[{k}]]$                                           | $k$                                  |
+| $[[\phi < \psi]]$        | $\eta(\frac{1}{2} + [[\phi]] - [[\psi]])$            |   | $[\mathrm{p}(\bar{X})]]^{**}$                       | $[[\psi_1 \vee \ldots \vee \psi_k]]$ |
 
 > $^{*}$ encodes the penalty for the $i^{\text{th}}$ neuron
 > $^{**}$ assuming predicate $p$ is defined by $k$ clauses of the form:
@@ -1330,14 +1322,6 @@ The poker hand data set (PHDS) (cf. [Cattral Robert and Oppacher Franz, 2002](ht
 
 6. Visualise and compare the results of the two predictors
 
----
-
-## Jump to the code!
-
-GitHub repository at [github.com/MatteoMagnini/demo-2025-woa-nesy/blob/master/notebook/injection.ipynb](https://github.com/MatteoMagnini/demo-2025-woa-nesy/blob/master/notebook/injection.ipynb)
-
-{{< image src="./images/ski-notebook-qr.svg" alt="QR code to the Jupyter notebook" width="20%" >}}
-
 {{% /section %}}
 
 ---
@@ -1409,29 +1393,41 @@ Limitations
 
 {{% /multicol %}}
 
+{{% /section %}}
+
 ---
 
-## Future research activities
+{{< slide id="applications" >}}
 
-- _foundational_<br> address recursion
+# NeSy applications with LLMs
 
-- _practical_<br> find a language that is a good balance between expressiveness and ease of use
+Last recent works on Neural-Symbolic AI involve Large Language Models
 
-- _target_<br> apply to large language models
+---
+
+{{% section %}}  
+
+## Actively Learning EL Terminologies from LLMs
+
 
 {{% /section %}}
 
 ---
 
-## Let's keep in touch!
+{{% section %}}
 
-The talk is over, I hope you enjoyed it
+## LLMs as oracles for instantiating ontologies with domain-specific knowledge
+
+---
+
+{{% /section %}}
+
+---
+
+## I hope you enjoyed the talk!
 
 {{% multicol %}}
 
-{{% col %}}
-
-{{% /col %}}
 
 {{% col %}}
 
@@ -1440,6 +1436,10 @@ The talk is over, I hope you enjoyed it
 {{% /col %}}
 
 {{% col %}}
+
+Let's keep in touch!
+
+<br>
 
 📫🎓 [matteo.magnini@unibo.it](mailto:matteo.magnini@unibo.it)
 
@@ -1450,12 +1450,11 @@ The talk is over, I hope you enjoyed it
 <br>
 
 💻 [github.com/MatteoMagnini](https://github.com/MatteoMagnini)
+
 <br>
 
 ✒️ [www.linkedin.com/in/matteo-magnini/](https://www.linkedin.com/in/matteo-magnini/)
-<br>
 
-🏢 [pslab-unibo.github.io](https://pslab-unibo.github.io/)
 
 {{% /col %}}
 
