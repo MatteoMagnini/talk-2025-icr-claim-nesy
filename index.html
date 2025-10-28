@@ -29,7 +29,7 @@
 
 <section data-shortcode-section="">
 <h1 id="symbolic-knowledge-extraction-and-injectiontheory-and-methods">Symbolic Knowledge Extraction and Injection:<br>Theory and Methods</h1>
-<p><span class="hint">(last built on: 2025-10-24)</span></p>
+<p><span class="hint">(last built on: 2025-10-28)</span></p>
 <p><a href="mailto:matteo.magnini@unibo.it">Matteo Magnini</a>
 <br> Department of Computer Science and Engineering (DISI)
 <br> Alma Mater Studiorum—University of Bologna</p>
@@ -974,10 +974,6 @@ The target feature is whether the individual earns more than $50,000 per year.</
 <p>Visualise the extracted symbolic knowledge as a <em>decision tree</em> and as a set of <em>rules</em></p>
 </li>
 </ol>
-</section><section>
-<h2 id="jump-to-the-code">Jump to the code</h2>
-<p>GitHub repository at <a href="https://github.com/MatteoMagnini/demo-2025-woa-nesy/blob/master/notebook/extraction.ipynb">github.com/MatteoMagnini/demo-2025-woa-nesy/blob/master/notebook/extraction.ipynb</a></p>
-<img src="./images/ske-notebook-qr.svg" alt="QR code to the Jupyter notebook" style="width: 20%; max-width: 95vw; max-height: 80vh; object-fit: contain; ">
 
 </section>
 </section><section>
@@ -1291,56 +1287,56 @@ ${p}(\bar{X}) \leftarrow \psi_1,\ \ldots,\ {p}(\bar{X}) \leftarrow \psi_k$</p></
   </thead>
   <tbody>
       <tr>
-          <td>[[\neg \phi]]</td>
+          <td>$[[\neg \phi]]$</td>
           <td>$\eta(1 - [[\phi]])$</td>
           <td></td>
-          <td>[[\phi \le \psi]]</td>
+          <td>$[[\phi \le \psi]]$</td>
           <td>$\eta([[\phi]] - [[\psi]])$</td>
       </tr>
       <tr>
-          <td>[[\phi \wedge \psi]]</td>
+          <td>$[[\phi \wedge \psi]]$</td>
           <td>$\eta(\max([[\phi]], [[\psi]]))$</td>
           <td></td>
           <td>$[\mathrm{class}(\bar{X}, {y}_i) \leftarrow \psi]]$</td>
           <td>$[[\psi]]^{*}$</td>
       </tr>
       <tr>
-          <td>[[\phi \vee \psi]]</td>
+          <td>$[[\phi \vee \psi]]$</td>
           <td>$\eta(\min([[\phi]], [[\psi]]))$</td>
           <td></td>
           <td>$[\text{expr}(\bar{X})]]$</td>
           <td>$\text{expr}([[\bar{X}]])$</td>
       </tr>
       <tr>
-          <td>[[\phi = \psi]]</td>
+          <td>$[[\phi = \psi]]$</td>
           <td>$\eta(\left\lvert [[\phi]] - [[\psi]] \right\rvert)$</td>
           <td></td>
           <td>$[[\mathtt{true}]]$</td>
           <td>$0$</td>
       </tr>
       <tr>
-          <td>[[\phi \ne \psi]]</td>
+          <td>$[[\phi \ne \psi]]$</td>
           <td>$[[\neg(\phi = \psi)]]$</td>
           <td></td>
           <td>$[[\mathtt{false}]]$</td>
           <td>$1$</td>
       </tr>
       <tr>
-          <td>[[\phi &gt; \psi]]</td>
+          <td>$[[\phi &gt; \psi]]$</td>
           <td>$\eta(\frac{1}{2} - [[\phi]] + [[\psi]])$</td>
           <td></td>
           <td>$[[X]]$</td>
           <td>$x$</td>
       </tr>
       <tr>
-          <td>[[\phi \ge \psi]]</td>
+          <td>$[[\phi \ge \psi]]$</td>
           <td>$\eta([[\psi]] - [[\phi]])$</td>
           <td></td>
           <td>$[[{k}]]$</td>
           <td>$k$</td>
       </tr>
       <tr>
-          <td>[[\phi &lt; \psi]]</td>
+          <td>$[[\phi &lt; \psi]]$</td>
           <td>$\eta(\frac{1}{2} + [[\phi]] - [[\psi]])$</td>
           <td></td>
           <td>$[\mathrm{p}(\bar{X})]]^{**}$</td>
@@ -1707,10 +1703,6 @@ $$
 <p>Visualise and compare the results of the two predictors</p>
 </li>
 </ol>
-</section><section>
-<h2 id="jump-to-the-code">Jump to the code!</h2>
-<p>GitHub repository at <a href="https://github.com/MatteoMagnini/demo-2025-woa-nesy/blob/master/notebook/injection.ipynb">github.com/MatteoMagnini/demo-2025-woa-nesy/blob/master/notebook/injection.ipynb</a></p>
-<img src="./images/ski-notebook-qr.svg" alt="QR code to the Jupyter notebook" style="width: 20%; max-width: 95vw; max-height: 80vh; object-fit: contain; ">
 
 </section>
 </section><section>
@@ -1793,38 +1785,44 @@ Limitations
 </div>
 </div>
 </div>
+
+</section>
+</section>
+
+<section data-noprocess="" data-shortcode-slide="" id="applications">
+  
+<h1 id="nesy-applications-with-llms">NeSy applications with LLMs</h1>
+<p>Last recent works on Neural-Symbolic AI involve Large Language Models</p>
 </section><section>
-<h2 id="future-research-activities">Future research activities</h2>
-<ul>
-<li>
-<p><em>foundational</em><br> address recursion</p>
-</li>
-<li>
-<p><em>practical</em><br> find a language that is a good balance between expressiveness and ease of use</p>
-</li>
-<li>
-<p><em>target</em><br> apply to large language models</p>
-</li>
-</ul>
+
+
+<section data-shortcode-section="">
+<h2 id="actively-learning-el-terminologies-from-llms">Actively Learning EL Terminologies from LLMs</h2>
 
 </section>
 </section><section>
-<h2 id="lets-keep-in-touch">Let’s keep in touch!</h2>
-<p>The talk is over, I hope you enjoyed it</p>
+
+
+<section data-shortcode-section="">
+<h2 id="llms-as-oracles-for-instantiating-ontologies-with-domain-specific-knowledge">LLMs as oracles for instantiating ontologies with domain-specific knowledge</h2>
+</section><section>
+
+</section>
+</section><section>
+<h2 id="i-hope-you-enjoyed-the-talk">I hope you enjoyed the talk!</h2>
 
 <div class="container-fluid w-100 m-0 p-0 justify-content-center">
-    <div class="row justify-content-center "><div class="col "></div>
-<div class="col "><img src="./images/matteo.png" alt="Matteo Magnini" style="width: 100%; max-width: 95vw; max-height: 50vh; object-fit: contain; ">
+    <div class="row justify-content-center "><div class="col "><img src="./images/matteo.png" alt="Matteo Magnini" style="width: 100%; max-width: 95vw; max-height: 50vh; object-fit: contain; ">
 </div>
-<div class="col "><p>📫🎓 <a href="mailto:matteo.magnini@unibo.it">matteo.magnini@unibo.it</a></p>
+<div class="col "><p>Let’s keep in touch!</p>
+<br>
+<p>📫🎓 <a href="mailto:matteo.magnini@unibo.it">matteo.magnini@unibo.it</a></p>
 <br>
 <p>📫✉️‍ <a href="mailto:matteo.magnini00@gmail.com">matteo.magnini00@gmail.com</a></p>
 <br>
-<p>💻 <a href="https://github.com/MatteoMagnini">github.com/MatteoMagnini</a>
-<br></p>
-<p>✒️ <a href="https://www.linkedin.com/in/matteo-magnini/">www.linkedin.com/in/matteo-magnini/</a>
-<br></p>
-<p>🏢 <a href="https://pslab-unibo.github.io/">pslab-unibo.github.io</a></p>
+<p>💻 <a href="https://github.com/MatteoMagnini">github.com/MatteoMagnini</a></p>
+<br>
+<p>✒️ <a href="https://www.linkedin.com/in/matteo-magnini/">www.linkedin.com/in/matteo-magnini/</a></p>
 </div>
 </div>
 </div>
