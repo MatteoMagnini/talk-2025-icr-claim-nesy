@@ -95,13 +95,13 @@ outputs = ["Reveal"]
 
 {{% col %}}
 
-{{< image src="./images/wedding.jpg" alt="Wedding" width="100%" max-h="50vh" >}}
+{{< image src="./images/wedding.jpg" alt="Wedding" width="100%" max-h="70vh" >}}
 
 {{% /col %}}
 
 {{% col %}}
 
-{{< image src="./images/frontispiece.png" alt="Wedding" width="100%" max-h="50vh" >}}
+{{< image src="./images/frontispiece.png" alt="Wedding" width="100%" max-h="70vh" >}}
 
 {{% /col %}}
 
@@ -833,19 +833,10 @@ Pedagogical SKE
 
 ---
 
-## Overview
-SKE methods: theory and practice
-
----
-
 {{% section %}}
 
 ## CART (pt. 1)
 Classification and regression trees (cf. [Breiman et al., 1984](https://doi.org/10.1201/9781315139470))
-
----
-
-## CART (pt. 2)
 
 {{< image src="./images/dt-kyphosis.png" alt="Example of a decision tree" width="80%" max-h="60vh" >}}
 
@@ -854,7 +845,7 @@ Notice that all decision trees subtend a partition of the input space, and that 
 
 ---
 
-## CART (pt. 3)
+## CART (pt. 2)
 
 1. generate a _synthetic_ dataset by using the predictions of the sub-symbolic predictor
 
@@ -864,22 +855,13 @@ Notice that all decision trees subtend a partition of the input space, and that 
 
 4. [optional] rewrite the tree as a set of symbolic _rules_
 
-{{% /section %}}
-
 ---
 
-{{% section %}}
+## Adult classification task (pt. 1)
 
-## Practical example of SKE
-The Adult dataset (cf. [Becker Barry and Kohavi Ronny, 1996](https://doi.org/10.24432/C5XW20))
-
----
-
-## Adult classification task
-
-The Adult dataset contains the records (48,842) of individuals based on census data (this dataset is also known as Census Income).
+The Adult dataset (cf. [Becker Barry and Kohavi Ronny, 1996](https://doi.org/10.24432/C5XW20)) contains the records (48,842) of individuals based on census data (this dataset is also known as Census Income).
 The dataset has many features (14) related to the individuals' demographics, such as age, education, and occupation.
-The target feature is whether the individual earns more than $50,000 per year.
+The target feature is whether the individual earns more than `$50,000` per year.
 
 <br>
 
@@ -903,15 +885,126 @@ The target feature is whether the individual earns more than $50,000 per year.
 
 ---
 
-## What we will do
+## Adult classification task (pt. 2)
 
-1. Download the Adult dataset and preprocess it
+We can train a simple feed-forward neural network for a fixed amount of epoches on the Adult dataset to classify whether an individual earns more than `$50,000` per year.
 
-2. Train a sub-symbolic predictor -- a *neural network* -- on the Adult dataset
+{{% multicol %}}
 
-3. Use a *pedagogical SKE method* -- CART -- to extract symbolic knowledge from the trained neural network
+{{% col %}}
 
-4. Visualise the extracted symbolic knowledge as a *decision tree* and as a set of *rules*
+```python
+class AdultNet(nn.Module):
+    def __init__(self):
+        super().__init__()
+        self.model = nn.Sequential(
+            nn.Linear(FEATURE_NUMBER, HIDDEN_SIZE),
+            nn.ReLU(),
+            nn.Linear(HIDDEN_SIZE, HIDDEN_SIZE),
+            nn.ReLU(),
+            nn.Linear(HIDDEN_SIZE, CLASS_NUMBER)
+        )
+
+    def forward(self, x):
+        return self.model(x)
+```
+
+{{% /col %}}
+
+{{% col %}}
+
+
+```python
+def train_model() -> tuple[nn.Module, list[float]]:
+    model = AdultNet()
+    model.to(device)
+    optimizer = optim.Adam(model.parameters(), lr=0.001)
+    criterion = nn.CrossEntropyLoss()
+    train_losses = []
+    for epoch in range(EPOCHES):
+        model.train()
+        optimizer.zero_grad()
+        output = model(X_train_tensor)
+        loss = criterion(output, y_train_tensor)
+        loss.backward()
+        optimizer.step()
+        train_losses.append(loss.item())
+        if (epoch + 1) % 10 == 0 or epoch == EPOCHES - 1:
+            print(f"Epoch {epoch+1}: loss = {loss.item():.4f}")
+    return model, train_losses
+```
+
+{{% /col %}}
+
+{{% /multicol %}}
+
+---
+
+## Adult classification task (pt. 3)
+
+{{% multicol %}}
+
+{{% col %}}
+
+{{< image src="./images/extraction_files/extraction_15_0.png" alt="Loss during training" width="100%" max-h="60vh" >}}
+
+{{% /col %}}
+
+{{% col %}}
+
+<br>
+<div style="text-align: center;">SciKitLearn classification report</div>
+<br>
+
+| Class        | Precision | Recall   | F1-Score | Support |
+|--------------|-----------|----------|----------|---------|
+| <=50K        | 0.867812  | 0.935882 | 0.900562 | 24.720  |
+| >50K         | 0.731447  | 0.550568 | 0.628247 | 7.841   |
+| Accuracy     |           |          | 0.843094 | 32.561  |
+| Macro Avg    | 0.799629  | 0.743225 | 0.764405 | 32.561  |
+| Weighted Avg | 0.834974  | 0.843094 | 0.834986 | 32.561  |
+
+{{% /col %}}
+
+{{% /multicol %}}
+
+---
+
+## Extracted rules
+
+{{% multicol %}}
+
+{{% col %}}
+
+{{< image src="./images/extraction_files/extraction_25_0.png" alt="Decision tree" width="100%" max-h="100vh" >}}
+
+{{% /col %}}
+
+{{% col %}}
+
+{{< image src="./images/extraction_files/extracted-symbolic-rules.png" alt="Decision tree" width="100%" max-h="60vh" >}}
+
+{{% /col %}}
+
+{{% col %}}
+<div style="font-size: 1.15rem; line-height: 1.5; font-family: 'Fira Sans', 'Helvetica Neue', sans-serif;">
+
+**Decision Rules**
+
+1. **class = 0** if `education ≤ 12.5` and `capital-gain ≤ 3048`
+2. **class = 1** if `education ≤ 12.5` and `capital-gain > 3048`
+3. **class = 0** if `education > 12.5` and `occupation ≤ 0.5` and `hours-per-week ≤ 31`
+4. **class = 1** if `education > 12.5` and `occupation ≤ 0.5` and `hours-per-week > 31`
+5. **class = 0** if `education > 12.5` and `occupation > 0.5` and `capital-gain ≤ 3869` and `occupation ≤ 4.5`
+6. **class = 1** if `education > 12.5` and `occupation > 0.5` and `capital-gain ≤ 3869` and `occupation > 4.5`
+7. **class = 1** if `education > 12.5` and `occupation > 0.5` and `capital-gain > 3869`
+
+</div>
+
+
+{{% /col %}}
+
+{{% /multicol %}}
 
 {{% /section %}}
 
