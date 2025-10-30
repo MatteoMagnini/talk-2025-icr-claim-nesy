@@ -970,7 +970,7 @@ def train_model() -> tuple[nn.Module, list[float]]:
 
 ---
 
-## Extracted rules
+## Extracted rules (pt. 1)
 
 {{% multicol %}}
 
@@ -1005,6 +1005,22 @@ def train_model() -> tuple[nn.Module, list[float]]:
 {{% /col %}}
 
 {{% /multicol %}}
+
+---
+
+## Extracted rules (pt. 2)
+
+<br>
+<div style="text-align: center;">Fidelity of the symbolic predictor</div>
+<br>
+
+| Class        | Precision | Recall | F1-Score | Support |
+|--------------|-----------|--------|----------|---------|
+| 0            | 0.97      | 0.98   | 0.97     | 26659   |
+| 1            | 0.89      | 0.84   | 0.86     | 5902    |
+| Accuracy     |           |        | 0.95     | 32561   |
+| Macro Avg    | 0.93      | 0.91   | 0.92     | 32561   |
+| Weighted Avg | 0.95      | 0.95   | 0.95     | 32561   |
 
 {{% /section %}}
 
