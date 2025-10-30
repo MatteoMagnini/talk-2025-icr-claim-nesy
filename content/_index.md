@@ -1040,10 +1040,7 @@ def train_model() -> tuple[nn.Module, list[float]]:
 
 {{% col %}}
 
-{{% /col %}}
-
-{{% col %}}
-
+<div style="text-align: center;">
 <h3 style="color: blue">
 Target AI task
 </h3>
@@ -1051,11 +1048,13 @@ Target AI task
 - _classification_<br> $f: 𝒳 ⊆ ℝⁿ → 𝒴 s.t. |𝒴| = k$
 
 - _regression_<br> $f: 𝒳 ⊆ ℝⁿ → 𝒴 ⊆ ℝᵐ$
+</div>
 
 {{% /col %}}
 
 {{% col %}}
 
+<div style="text-align: center;">
 <h3 style="color: blue">
 Input data
 </h3>
@@ -1065,6 +1064,7 @@ Input data
 - _discrete_<br> $𝒳 ∈ {x₁, ..., xₙ}ⁿ$
 
 - _continuous_<br> $𝒳 ⊆ ℝⁿ$
+</div>
 
 {{% /col %}}
 
@@ -1108,11 +1108,7 @@ Expressiveness
 
 {{% /multicol %}}
 
-{{% /section %}}
-
 ---
-
-{{% section %}}
 
 ## Discussion
 
@@ -1145,18 +1141,6 @@ Expressiveness
 {{% /col %}}
 
 {{% /multicol %}}
-
----
-
-## Future research activities
-
-- target images or highly dimensional data in general
-
-- target reinforcement learning (when based on NN)
-
-- target unsupervised learning
-
-- design and prototype your own extraction algorithm
 
 {{% /section %}}
 
