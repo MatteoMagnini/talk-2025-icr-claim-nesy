@@ -672,16 +672,20 @@ Solution is __coss-validation__:
 {{% col %}}
 {{< image src="./images/non-separable.png" alt="Non-linearly-separable data" width="100%" max-h="50vh" >}}
 
+<div style="text-align: center;">
 Non-linearly-separable data ...
 <br>
 $(x, y)$
+</div>
 {{% /col %}}
 {{% col %}}
 {{< image src="./images/non-separable-polar.png" alt="Linearly-separable data" width="100%" max-h="50vh" >}}
 
-... may be separable in _another space_
+<div style="text-align: center;">
+... may be separable in another space
 <br>
 $(\rho = \sqrt{x^2 + y^2}$, $\theta = \arctan(y/x))$
+</div>
 {{% /col %}}
 {{% /multicol %}}
 
@@ -1221,12 +1225,6 @@ Main entities and how to inject symbolic knowledge into sub-symbolic predictors
 
 ---
 
-## Overview
-
-SKI methods: theory and practice
-
----
-
 {{% section %}}
 
 ## Knowledge Injection via Network Structuring (KINS)
@@ -1321,18 +1319,16 @@ $$
 
 {{% section %}}
 
-## Practical example of SKI
-The poker hand data set (PHDS) (cf. [Cattral Robert and Oppacher Franz, 2002](https://doi.org/10.24432/C5KW38))
-
----
-
 ## PHDS classification task
+
 
 {{% multicol %}}
 
 {{% col %}}
 
 <div style="margin-top: 25vh; margin-left: 5vw;">
+
+The poker hand data set (PHDS) (cf. [Cattral Robert and Oppacher Franz, 2002](https://doi.org/10.24432/C5KW38))
 
 - Each record represents one poker hand
 
@@ -1375,6 +1371,26 @@ The poker hand data set (PHDS) (cf. [Cattral Robert and Oppacher Franz, 2002](ht
 
 ---
 
+## An unbalanced dataset
+
+{{% multicol %}}
+
+{{% col %}}
+
+{{< image src="./images/injection_files/injection_10_0.png" alt="Class distribution of the PHDS dataset (training)" width="90%" >}}
+
+{{% /col %}}
+
+{{% col %}}
+
+{{< image src="./images/injection_files/injection_11_0.png" alt="Class distribution of the PHDS dataset (test)" width="90%" >}}
+
+{{% /col %}}
+
+{{% /multicol %}}
+
+---
+
 ## Logic rules to inject (pt. 1)
 
 | **Class**     | **Logic Formulation**                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              |
@@ -1399,21 +1415,68 @@ The poker hand data set (PHDS) (cf. [Cattral Robert and Oppacher Franz, 2002](ht
 | **Three of a Kind** | `class(R₁, ..., S₅, three) ← three(R₁, ..., S₅)`<br>`three(R₁, ..., S₅) ← R₁ = R₂ ∧ R₁ = R₃`<br>`three(R₁, ..., S₅) ← R₁ = R₂ ∧ R₁ = R₄`<br>`three(R₁, ..., S₅) ← R₁ = R₂ ∧ R₁ = R₅`<br>`three(R₁, ..., S₅) ← R₁ = R₃ ∧ R₁ = R₄`<br>`three(R₁, ..., S₅) ← R₁ = R₃ ∧ R₁ = R₅`<br>`three(R₁, ..., S₅) ← R₁ = R₄ ∧ R₁ = R₅`<br>`three(R₁, ..., S₅) ← R₂ = R₃ ∧ R₂ = R₄`<br>`three(R₁, ..., S₅) ← R₂ = R₃ ∧ R₂ = R₅`<br>`three(R₁, ..., S₅) ← R₂ = R₄ ∧ R₂ = R₅`<br>`three(R₁, ..., S₅) ← R₃ = R₄ ∧ R₃ = R₅` |
 | **Flush**           | `class(R₁, ..., S₅, flush) ← flush(R₁, ..., S₅)`<br>`flush(R₁, ..., S₅) ← S₁ = S₂ ∧ S₁ = S₃ ∧ S₁ = S₄ ∧ S₁ = S₅`                                                                                                                                                                                                                                                                                                                                                                                         |
 
+
 ---
 
-## What we will do
+## Training the models (pt. 1)
 
-1. Download the PHDS dataset and preprocess it
+{{% multicol %}}
 
-2. Define the *symbolic knowledge* to inject
+{{% col %}}
 
-3. Train a sub-symbolic predictor -- a *neural network* -- on the PHDS dataset
+```python
+class PokerNet(nn.Module):
+    def __init__(self):
+        super().__init__()
+        self.model = nn.Sequential(
+            nn.Linear(FEATURE_NUMBER, HIDDEN_SIZE),
+            nn.ReLU(),
+            nn.Linear(HIDDEN_SIZE, HIDDEN_SIZE),
+            nn.ReLU(),
+            nn.Linear(HIDDEN_SIZE, CLASS_NUMBER)
+        )
 
-4. Train a second neural network with the symbolic knowledge injected
+    def forward(self, x):
+        return self.model(x)
+```
 
-5. We will inject the knowledge in the *loss function*
+{{% /col %}}
 
-6. Visualise and compare the results of the two predictors
+{{% col %}}
+
+```python
+def rule_high_card(x_batch_orig, pred_logits):
+    ranks = x_batch_orig[:, 1::2].int()  # Extract ranks from the input
+    num_pairs = count_occurrences(ranks, 2)  # Count occurrences of pairs
+    is_high_card = (num_pairs == 0)  # Check if there are no pairs
+    prob_high_card = torch.softmax(pred_logits, dim=1)[:, 0]  # Probability of "High Card"
+    penalty = ((1 - prob_high_card) ** 2) * is_high_card.float()  # Calculate penalty
+    return penalty.mean()
+
+def rule_one_pair(x_batch_orig, pred_logits):
+    ranks = x_batch_orig[:, 1::2].int()  # Extract ranks from the input
+    num_pairs = count_occurrences(ranks, 2)  # Count occurrences of pairs
+    is_one_pair = (num_pairs == 1)  # Check if there is exactly one pair
+    prob_one_pair = torch.softmax(pred_logits, dim=1)[:, 1]  # Probability of "One Pair"
+    penalty = ((1 - prob_one_pair) ** 2) * is_one_pair.float()  # Calculate penalty
+    return penalty.mean()
+```
+
+{{% /col %}}
+
+{{% /multicol %}}
+
+---
+
+## Training the models (pt. 2)
+
+{{< image src="./images/injection_files/injection_23_0.png" alt="Loss during training" width="100%" max-h="60vh" >}}
+
+---
+
+## Results
+
+{{< image src="./images/injection_files/injection_26_0.png" alt="F1 score per class" width="100%" max-h="60vh" >}}
 
 {{% /section %}}
 

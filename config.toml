@@ -1,4 +1,4 @@
-baseURL = "https://MatteoMagnini.github.io/talk-2025-woa-nesy"
+baseURL = "https://MatteoMagnini.github.io/talk-2025-icr-claim-nesy"
 languageCode = "en-us"
 title = "A Hugo theme for creating Reveal.js presentations"
 disableKinds = ["sitemap", "RSS"]
@@ -10,7 +10,7 @@ publishDir = "build"
 # uglyURLs = true
 
 [author]
-name = "Giovanni Ciatto and Matteo Magnini"
+name = "Matteo Magnini"
 
 # currently only the unsafe mode for goldmark is supported
 [markup.goldmark.renderer]
@@ -54,6 +54,9 @@ enableSourceMap = true
 # [params.reveal_hugo.mermaid.gitGraph]
 # mainBranchName = 'master'
 # rotateCommitLabel = true
+
+[params.katex]
+delimiters = [["\\(", "\\)"], ["\\[", "\\]"]]
 
 [security]
   enableInlineShortcodes = false
