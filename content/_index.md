@@ -1507,11 +1507,7 @@ def rule_one_pair(x_batch_orig, pred_logits):
   - _knowledge manipulation_: improve / extend / reason about symbol knowledge—subsymbolically
   - _learning support_: improve the sub-symbolic predictor (e.g. speed, size, etc.)
 
-{{% /section %}}
-
 ---
-
-{{% section %}}
 
 ## Discussion
 
@@ -1561,20 +1557,45 @@ Last recent works on Neural-Symbolic AI involve Large Language Models
 
 ---
 
-{{% section %}}  
-
-## Actively Learning EL Terminologies from LLMs
-
-
-{{% /section %}}
-
----
-
 {{% section %}}
 
 ## LLMs as oracles for instantiating ontologies with domain-specific knowledge
 
+(ref. [Ciatto et al., 2025](https://doi.org/10.1016/J.KNOSYS.2024.112940))
+
+{{< image src="./images/llm/llm4kg-roadmap.svg" alt="Overview of LLM4KG" width="70%" >}}
+
 ---
+
+## Experiments
+
+{{< image src="./images/llm/ontology_skeleton.svg" alt="Ontology skeleton" width="80%" >}}
+
+---
+
+## Results
+
+{{< image src="./images/llm/llm4kg-results.png" alt="Results of LLM4KG" width="80%" >}}
+
+{{% /section %}}
+
+
+---
+
+{{% section %}}  
+
+## Actively Learning EL Terminologies from LLMs (pt. 1)
+
+(ref. [Magnini et al., 2025](https://doi.org/10.3233/FAIA251009))
+
+{{< image src="./images/llm/queries-example.svg" alt="Example of the types of queries" width="80%" >}}
+
+---
+
+## Actively Learning EL Terminologies from LLMs (pt. 2)
+
+{{< image src="./images/llm/algorithm.svg" alt="Overview of the active learning algorithm" width="60%" >}}
+
 
 {{% /section %}}
 
