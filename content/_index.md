@@ -1353,6 +1353,79 @@ Last recent works on Neural-Symbolic AI involve Large Language Models
 
 {{< image src="./images/llm/algorithm.svg" alt="Overview of the active learning algorithm" width="60%" >}}
 
+---
+
+## Experiments and Results (pt. 1)
+
+{{% multicol %}}
+
+{{% col %}}
+
+| **Ontology**    | **$N_C$** | **$N_R$** | **Log. Ax.** | **PAC Sample** | **Poss. Ax.** |
+|-----------------|-----------|-----------|--------------|----------------|---------------|
+| **Animals**     | 17        | 4         | 12           | 542            | 6,936         |
+| **Cell**        | 22        | 0         | 24           | 1,119          | 10,164        |
+| **Football**    | 10        | 3         | 9            | 341            | 1,500         |
+| **Generations** | 20        | 4         | 18           | 847            | 10,800        |
+| **University**  | 7         | 3         | 4            | 139            | 588           |
+
+<br>
+Ontology statistics and PAC sample sizes with $\epsilon=0.2$ and $\gamma=0.1$. $N_C$ and $N_R$ are the number of concept and role names occurring in the ontologies.
+
+{{% /col %}}
+
+{{% col %}}
+
+| **Ontology**     | **Accuracy** | **Recall** | **Precision** | **F1-Score** |
+|-------------------|--------------|------------|---------------|--------------|
+| **Animals**       | 0.737        | 0.858      | 0.381         | 0.428        |
+| **Cell**          | 0.391        | 0.733      | 0.206         | 0.284        |
+| **Football**      | 0.553        | 0.890      | 0.422         | 0.477        |
+| **Generations**   | 0.691        | 0.658      | 0.564         | 0.476        |
+| **University**    | 0.622        | 0.629      | 0.313         | 0.302        |
+
+<br>
+Results of ExactLearner+LLM grouped by ontologies.
+
+{{% /col %}}
+
+{{% /multicol %}}
+
+---
+
+## Experiments and Results (pt. 2)
+
+{{% multicol %}}
+
+{{% col %}}
+
+| **Model**         | **Accuracy** | **Recall** | **Precision** | **F1-Score** |
+|-------------------|--------------|------------|---------------|--------------|
+| **Llama2 (13b)**  | 0.521        | 0.71       | 0.294         | 0.314        |
+| **Llama3 (8b)**   | 0.43         | 0.947      | 0.218         | 0.333        |
+| **Mistral (7b)**  | 0.741        | 0.747      | 0.45          | 0.49         |
+| **Mixtral (47b)** | 0.705        | 0.611      | 0.547         | 0.436        |
+
+<br>
+Results of ExactLearner+LLM grouped by models.
+
+{{% /col %}}
+
+{{% col %}}
+
+| **Prompt Type**         | **Accuracy** | **Recall** | **Precision** | **F1-Score** |
+|-------------------------|--------------|------------|---------------|--------------|
+| **M. OWL Syntax**       | 0.34         | 0.93       | 0.165         | 0.262        |
+| **Natural Language**    | 0.751        | 0.811      | 0.414         | 0.511        |
+| **A. M. OWL Syntax**    | 0.537        | 0.767      | 0.326         | 0.347        |
+| **A. Natural Language** | 0.767        | 0.506      | 0.603         | 0.454        |
+
+<br>
+Results of ExactLearner+LLM grouped by prompts.
+
+{{% /col %}}
+
+{{% /multicol %}}
 
 {{% /section %}}
 
