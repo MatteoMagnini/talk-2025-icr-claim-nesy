@@ -168,7 +168,7 @@ Two broad categories of AI approaches:
 
 {{% fragment %}}
 > Let's say we need to represent $N$ classes, how many columns would the tables have?
-{{% /fragment %}}
+> {{% /fragment %}}
 
 {{% /col %}}
 {{% /multicol %}}
@@ -410,7 +410,7 @@ Focus on the target feature:
 3. `Neuro | Symbolic`: NN $\xrightarrow{cooperates}$ symbolic module $\xrightarrow{cooperates}$ NN $\rightarrow$ ...
 4. `Neuro-Symbolic → Neuro`: symbolic knowledge $\xrightarrow{influences}$ NN
 5. <code>Neuro<sub>Symbolic</sub></code>: symbolic knowledge $\xrightarrow{constrains}$ NN
-6. `Neuro[Symbolic]`: symbolic module $\xrightarrow{embedded in}$ NN
+6. `Neuro[Symbolic]`: symbolic module $\xrightarrow{\textit{embedded in}}$ NN
 
 {{% /fragment %}}
 
@@ -764,6 +764,15 @@ def train_model() -> tuple[nn.Module, list[float]]:
 | Macro Avg    | 0.93      | 0.91   | 0.92     | 32561   |
 | Weighted Avg | 0.95      | 0.95   | 0.95     | 32561   |
 
+---
+
+Jupyter notebook available here
+
+[github.com/MatteoMagnini/demo-2025-woa-nesy/blob/master/notebook/extraction.ipynb](https://github.com/MatteoMagnini/demo-2025-woa-nesy/blob/master/notebook/extraction.ipynb)
+
+{{< image src="./images/ske-notebook-qr.svg" alt="QR code to the Jupyter notebook" width="20%" >}}
+
+
 {{% /section %}}
 
 ---
@@ -874,7 +883,7 @@ Expressiveness
 
 ### **Limitations**
 
-- tabular data as input, no images
+- many methods for tabular data as input, very few for images
 
 - high dimensional datasets could lead to poorly readable rules
 
@@ -1215,6 +1224,16 @@ def rule_one_pair(x_batch_orig, pred_logits):
 ## Results
 
 {{< image src="./images/injection_files/injection_26_0.png" alt="F1 score per class" width="100%" max-h="60vh" >}}
+
+---
+
+Jupyter notebook available here
+
+[github.com/MatteoMagnini/demo-2025-woa-nesy/blob/master/notebook/injection.ipynb](https://github.com/MatteoMagnini/demo-2025-woa-nesy/blob/master/notebook/injection.ipynb)
+
+{{< image src="./images/ski-notebook-qr.svg" alt="QR code to the Jupyter notebook" width="20%" >}}
+
+
 
 {{% /section %}}
 
